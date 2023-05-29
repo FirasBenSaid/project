@@ -1,10 +1,11 @@
-import { Component, Injectable, OnInit,  } from '@angular/core';
-
+import { Component ,Injectable,OnInit  } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ViewChild } from '@angular/core';
 
 import { RatingService } from '../rating.service';
-import { Clubsmodel } from '../Clubs.model';
+import { Clubsmodel } from '../model/Clubs.model';
 
-
+@Injectable()
 
 @Component({
   selector: 'app-formation',
@@ -14,6 +15,7 @@ import { Clubsmodel } from '../Clubs.model';
 })
 
 export class FormationComponent implements OnInit{
+  @ViewChild('f', { static: false }) slForm: NgForm;
   x = 'RealMadrid';
   clubs : Clubsmodel[];
   // constructor(private clubsmodel: Clubsmodel) {
@@ -25,6 +27,18 @@ export class FormationComponent implements OnInit{
   }
   constructor(private ratingservice:RatingService){
 this.clubs=ratingservice.getclub();
-
   }
+  clear(){
+   this.slForm.reset();
+};
+// onSubmit(form: NgForm) {
+//   const value = form.value;
+ 
+//   const newrating = new servicerating(value.name , value.rating);
+//   // this.ratingservice.addrating(newrating);
+// form.reset();
+
+
+    
+// }
 }

@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 
 import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { TacticComponent } from './formation/tactic/tactic.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
     ContactComponent,
     FormationComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    DiagramModule
+    DiagramModule,
+    TacticComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

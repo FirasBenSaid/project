@@ -1,21 +1,30 @@
-import { Component, Injectable,  } from '@angular/core';
-import { ClubsService } from '../Clubs.service';
+import { Component, Injectable, OnInit,  } from '@angular/core';
 
-@Injectable()
+
+import { RatingService } from '../rating.service';
+import { Clubsmodel } from '../Clubs.model';
+
+
+
 @Component({
   selector: 'app-formation',
   templateUrl: './formation.component.html',
   styleUrls: ['./formation.component.css'],
-  providers: [ClubsService]
+  //  providers: [RatingService]
 })
 
-export class FormationComponent {
-  x = 'Real Madrid';
-  Clubs: { name: string, players: string[] }[] = [];
-  constructor(private clubsService: ClubsService) {
+export class FormationComponent implements OnInit{
+  x = 'RealMadrid';
+  clubs : Clubsmodel[];
+  // constructor(private clubsmodel: Clubsmodel) {
 
-  }
+  // }
   ngOnInit() {
-    this.Clubs = this.clubsService.Clubs;
+    // this.Clubs = this.clubsmodel.Clubs;
+    console.log(this.clubs)
+  }
+  constructor(private ratingservice:RatingService){
+this.clubs=ratingservice.getclub();
+
   }
 }

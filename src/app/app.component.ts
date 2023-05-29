@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClubsService } from './Clubs.service';
+import { Clubsmodel } from './Clubs.model';
 
 @Component({
   selector: 'app-root',

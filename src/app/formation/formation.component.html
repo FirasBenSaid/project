@@ -3,14 +3,14 @@
         <form>
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <a *ngFor="let club of Clubs">
+                    <a *ngFor="let club of clubs">
 
                         <ul class="event_desc"
                             *ngIf="x === club.name">
                             {{club.name}}
                             <hr />
                             <li *ngFor="let player of club.players; let i = index">
-                                {{ player }}
+                                {{ player.name}}
                                 <label for="quantity">Rating</label>
                                 <input type="number" id="rating" name="rating" min="1" max="5" class="form-control" >
 
@@ -22,25 +22,7 @@
 
                 </div>
                
-              <!--  <div class="col-sm-5 form-group">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Boisko.svg" class="img" align="left" />
-
-
-                </div>-->
-
-              <!--  <h3 class="first-txt">   Courtois </h3>
-                <h3 class="second-txt">   2 </h3>
-                <h3 class="third-txt">   3</h3>
-                <h3 class="fourth-txt">   4 </h3>
-                <h3 class="fifth-txt">   5</h3>
-                <h3 class="sex-txt">   6 </h3>
-                <h3 class="seventh-txt">  7 </h3>
-                <h3 class="eight-txt">   8 </h3>
-                <h3 class="nein-txt">   9 </h3>
-                <h3 class="ten-txt">   10 </h3>
-                <h3 class="eleven-txt">   11 </h3>
-                 -->
-
+          
 
             </div>
                
@@ -57,3 +39,4 @@
         </form>
     </div>
 </div>
+<app-tactic></app-tactic>

@@ -1,36 +1,31 @@
+
 <div class="row">
     <div class="col-xs-12">
-        <form  #f="ngForm">
+        <form >
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <a *ngFor="let club of clubs">
+                    
+                            <ul *ngIf="x === newclub.name" 
 
-                        <ul class="event_desc"
-                            *ngIf="x === club.name">
-                            {{club.name}}
-                            <hr />
-                            <li *ngFor="let player of club.players; let i = index">
-                                {{ player.name}}
-                                <label for="quantity">Rating</label>
-                                <input type="number" id="rating" name="rating" min="1" max="5" class="form-control" ngModel>
-
-                            </li>
-
-                        </ul>
-
-                    </a>
-
-                </div>
-               
-          
-
-            </div>
-               
-           
-            <hr />
-            <div class="row">
-                <div class="col-xs-12">
-                    <button class=" btn btn-success" type="submit">Apply</button>
+                                 >{{newclub.name}}
+                                 <li *ngFor="let player of newclub.players">
+                                    {{player}}
+                                    <br>
+                                     <!-- <div *ngFor="let player of players" >{{player}}
+                                  <label>Rating</label>
+                                 <input type="text" id="rating" name="rating" 
+                                 
+                                 > -->
+                                 <input type="text" [(ngModel)]="ratingInput[player]" name="first">
+                                 
+                               
+                                 <button (click)="addRating(player)">Add Rating</button>
+                                      <br>
+                                    </li>
+                                  <!-- </div> -->
+                                     </ul>
+                                     
+                    <!-- <button class=" btn btn-success" type="submit" (click)="onClickSubmit()" >Apply</button> -->
                     <button class=" btn btn-danger" type="button" (click)="clear()">clear</button>
 
                 </div>
@@ -39,4 +34,4 @@
         </form>
     </div>
 </div>
-<app-tactic></app-tactic>
+<!-- <app-tactic></app-tactic> -->

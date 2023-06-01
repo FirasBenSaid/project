@@ -1,37 +1,25 @@
-
 <div class="row">
-    <div class="col-xs-12">
-        <form >
-            <div class="row">
-                <div class="col-sm-5 form-group">
-                    
-                            <ul *ngIf="x === newclub.name" 
+          <div class="column">
+             <h2>{{ club.name }}</h2>
 
-                                 >{{newclub.name}}
-                                 <li *ngFor="let player of newclub.players">
-                                    {{player}}
-                                    <br>
-                                     <!-- <div *ngFor="let player of players" >{{player}}
-                                  <label>Rating</label>
-                                 <input type="text" id="rating" name="rating" 
-                                 
-                                 > -->
-                                 <input type="text" [(ngModel)]="ratingInput[player]" name="first">
-                                 
-                               
-                                 <button (click)="addRating(player)">Add Rating</button>
-                                      <br>
-                                    </li>
-                                  <!-- </div> -->
-                                     </ul>
-                                     
-                    <!-- <button class=" btn btn-success" type="submit" (click)="onClickSubmit()" >Apply</button> -->
-                    <button class=" btn btn-danger" type="button" (click)="clear()">clear</button>
+                  <div *ngFor="let player of club.players">
+                      <h3>{{ player.name }}</h3>
 
-                </div>
-
-            </div>
-        </form>
-    </div>
+                        <input type="text" [(ngModel)]="player.ratingInput">
+                             <button (click)="addRating(player)" (click)="savedata()">Add Rating</button>
+                      </div>
+              </div>
+      <div class="column">
+        <img src="https://pictures.tribuna.com/image/6f375caa-76ac-44d1-a477-defa9626e065?width=1920&quality=70" alt="Formation" width="800" height="800">
 </div>
-<!-- <app-tactic></app-tactic> -->
+</div>
+
+
+
+
+
+
+
+
+
+

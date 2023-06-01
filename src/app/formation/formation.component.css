@@ -1,48 +1,10 @@
-.first-txt {
-  position: absolute;
-  bottom: 60px;
-  left: 500px;
-}
+.column {
+  float: left;
+  width: 50%;
+  }
 
-.second-txt {
-  position: absolute;
-  bottom: 200px;
-  left: 360px;
-}.third-txt {
-  position: absolute;
-  bottom: 120px;
-  left: 450px;
-}.fourth-txt {
-  position: absolute;
-  bottom: 120px;
-  left: 650px;
-}.fifth-txt {
-  position: absolute;
-  bottom: 200px;
-  left: 700px;
-}.sex-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}.seventh-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}.eight-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}.nein-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}.ten-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}.eleven-txt {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-}
-
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }

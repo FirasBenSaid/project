@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, Input, Output } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Clubsmodel ,Player} from './model/Clubs.model';
 
 
@@ -8,63 +8,29 @@ import { Clubsmodel ,Player} from './model/Clubs.model';
 })
 export class RatingService {
 
-//  @Output() ratingconfirmed = new EventEmitter<Clubsmodel>();
 
-// private clubsmodel: Clubsmodel[]=
-// [
-//   new Clubsmodel('RealMadrid', ['Vini'],[]) ,
+  club: Clubsmodel;
+  selectedPlayer: Player;
+
+  constructor() { 
+    const player1 = new Player('Courtois', [],'');
+    const player2 = new Player('Carvajal D.', [],'');
+    const player3 = new Player('Militao E.', [],'');
+    const player4 = new Player('Alaba D.  ', [],'');
+    const player5 = new Player('Camavinga E.', [],'');
+    const player6 = new Player('Valverde F.  ', [],'');
+    const player7 = new Player('Kroos T.'  , [],'');
+    const player8 = new Player('Modric L.  ', [],'');
+    const player9 = new Player('Rodrygo  ', [],'');
+    const player10 = new Player('Benzema K. (C)', [],'');
+    const player11 = new Player('Vinicius Junior', [],'');
+  
+    const players = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11];
+    this.club = new Clubsmodel('RealMadrid', players);
+  }
 
 
-// ];
-public clubsmodel: Clubsmodel = {
-  name: '',
-  players: [],
- 
-};
-public player: Player  = {
-  name: '',
-  ratings: [],
- 
-};
-
-
-  constructor() { }
-
-  // getclub() {
-  //   return this.clubsmodel.slice();
-  // }
-//   addrating (x: Clubsmodel){
-   
-// this.newclubmodel.push(x);
-// this.clubsmodel.slice();
-//   }
-addRating(rating: number , playername :string) {
-  if( playername === this.player.name){
-  this.player.ratings.push(rating);
-  console.log(this.player); 
-}else{
-  console.log("error");
+selectPlayer(player: Player) {
+  this.selectedPlayer = player;
 }
-}
-getClubsModel(): Clubsmodel {
-  return this.clubsmodel;
-}
-//   addpratings(pratings: Clubsmodel){
-// this.clubsmodel.push(...pratings);
-// this.clubsmodel.slice();
-//   }
-
-//   addIngredient(ingredient: Ingredient) {
-//     this.ingredients.push(ingredient);
-//     this.ingredientsChanged.next(this.ingredients.slice());
-//   }
-
-//   addIngredients(ingredients: Ingredient[]) {
-//     // for (let ingredient of ingredients) {
-//     //   this.addIngredient(ingredient);
-//     // }
-//     this.ingredients.push(...ingredients);
-//     this.ingredientsChanged.next(this.ingredients.slice());
-//   }
- 
 }

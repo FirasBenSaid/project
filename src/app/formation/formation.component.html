@@ -1,14 +1,26 @@
 <div class="row">
-          <div class="column">
+          <div class="column" *ngIf="!session">
              <h2>{{ club.name }}</h2>
 
                   <div *ngFor="let player of club.players">
                       <h3>{{ player.name }}</h3>
 
                         <input type="text" [(ngModel)]="player.ratingInput">
-                             <button (click)="addRating(player)" (click)="savedata()">Add Rating</button>
+                             <button (click)="addRating(player)" (click)="savedata()" >Add Rating</button>
+                             
                       </div>
+                      <button class="btn btn-danger" (click)="loaddata()">load data</button>
               </div>
+              <div class="column" *ngIf="session">
+                <h2>{{ session.name }}</h2>
+   
+                     <div *ngFor="let player of club.players">
+                         <h3>{{ session.name }}</h3>
+   
+                           <input type="text" [(ngModel)]="player.ratingInput">
+                                <button (click)="addRating(player)" (click)="savedata()" (click)="loaddata()">Add Rating</button>
+                         </div>
+                 </div>
       <div class="column">
         <img src="https://pictures.tribuna.com/image/6f375caa-76ac-44d1-a477-defa9626e065?width=1920&quality=70" alt="Formation" width="800" height="800">
 </div>
